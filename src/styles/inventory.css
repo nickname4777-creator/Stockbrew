@@ -1,0 +1,44 @@
+/* Inventory additions only. Everything else comes from index.css. */
+:root {
+  --amber: #9A6700; --danger: #B42318; --info: #2A5CA8; --track: #E4DFD5;
+}
+
+.stat__value--warn { color: var(--amber); }
+.stat__value--danger { color: var(--danger); }
+
+/* Scrollable regions (Levels table, Risk alerts, Waste log) */
+.scroll { max-height: min(460px, calc(100vh - 380px)); min-height: 200px; overflow: auto; margin-top: 16px; }
+.scroll .table { margin-top: 0; }
+.scroll thead th { position: sticky; top: 0; z-index: 1; background: #fff; }
+.scroll--list { display: flex; flex-direction: column; gap: 12px; padding-right: 4px; }
+.ctr { text-align: center !important; }
+
+/* Levels */
+.levels__product { width: 55%; }
+.levels__stock { font-weight: 700; }
+.levels__stock.is-out { color: var(--danger); }
+.bar { height: 4px; margin-top: 8px; max-width: 435px; background: var(--track); border-radius: 2px; overflow: hidden; }
+.bar__fill { display: block; height: 100%; border-radius: 2px; }
+.bar__fill--ok { background: var(--positive); }
+.bar__fill--low { background: var(--amber); }
+.bar__fill--overstock { background: var(--info); }
+.bar__fill--out { background: transparent; }
+
+/* Status / severity pills (same look as your .tag) */
+.pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 4px; }
+.pill--ok { background: var(--positive); }
+.pill--low, .pill--high { background: var(--amber); }
+.pill--overstock, .pill--medium { background: var(--info); }
+.pill--out, .pill--critical { background: var(--danger); }
+
+/* Risk alerts */
+.alert { padding: 12px 16px; border: 1.5px solid; border-radius: 8px; background: var(--ivory); }
+.alert--medium { border-color: var(--info); }
+.alert--high { border-color: var(--amber); }
+.alert--critical { border-color: var(--danger); }
+.alert__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.alert__id { margin-right: 10px; font-size: 12px; color: var(--muted); }
+.alert__detail { margin-top: 6px; font-size: 12px; line-height: 18px; color: var(--muted); }
+
+/* Receive stock */
+.hint { font-size: 12px; line-height: 18px; color: var(--muted); }
